@@ -3,6 +3,7 @@ package com.codeinsyt.springboot.cruddemo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.codeinsyt.springboot.cruddemo.dao.EmployeeDAO;
@@ -14,7 +15,7 @@ public class EmployeeServiceImp implements EmployeeService {
 	private EmployeeDAO employeeDAO;
 	
 	@Autowired
-	public EmployeeServiceImp(EmployeeDAO employeeDAO) {
+	public EmployeeServiceImp(@Qualifier("employeeDAOJPAImpl")EmployeeDAO employeeDAO) {
 		this.employeeDAO = employeeDAO;
 	}
 	
